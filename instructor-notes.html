@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Lesson Title: Instructor Notes</title>
+<title>Multi-omics microbiome data analysis with R/Bioconductor: Instructor Notes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="assets/styles.css">
 <script src="assets/scripts.js" type="text/javascript"></script><!-- mathjax --><!-- NOTE: https://docs.mathjax.org/en/latest/output/mathml.html#mathml-support --><!-- Changes from V2 to V4: https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html
@@ -41,7 +41,7 @@
     <div class="col-md-8">
       <div class="large-logo">
         <a href="index.html">
-        <img id="incubator-logo" alt="Carpentries Incubator" src="assets/images/incubator-logo.svg"></a>
+        <img id="incubator-logo" alt="Multi-omics microbiome data analysis with R/Bioconductor" src="assets/images/incubator-logo.svg"></a>
 
         <span class="badge text-bg-danger">
           <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
@@ -100,10 +100,10 @@
     </button>
     <div class="nav-logo">
       <a href="index.html">
-      <img class="small-logo" alt="Carpentries Incubator" src="assets/images/incubator-logo-sm.svg"></a>
+      <img class="small-logo" alt="Multi-omics microbiome data analysis with R/Bioconductor" src="assets/images/incubator-logo-sm.svg"></a>
     </div>
     <div class="lesson-title-md">
-      Lesson Title
+      Multi-omics microbiome data analysis with R/Bioconductor
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -114,7 +114,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Lesson Title
+            Multi-omics microbiome data analysis with R/Bioconductor
           </span>
         </li>
         <li class="nav-item">
@@ -244,7 +244,67 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-introduction.html">1. Introduction to multi-omics</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-multiassayexperiment.html">2. MultiAssayExperiment and the study data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-exploratory.html">3. Exploratory methods</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-unsupervised.html">4. Unsupervised methods</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-supervised.html">5. Supervised methods</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="06-summary.html">6. Summary</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -327,14 +387,172 @@
         <h1>Instructor Notes</h1>
         
 
-<p>This is a placeholder file. Please add content here.</p>
+<section><h2 class="section-heading" id="general">General<a class="anchor" aria-label="anchor" href="#general"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>The lesson takes about 8 hours of teaching and exercises (see the
+front matter of each episode). It assumes that learners know
+<code>TreeSummarizedExperiment</code>, agglomeration, transformation,
+ordination and the basics of machine learning, for example from the <a href="https://microbiome.github.io/microbiome-lesson/" class="external-link">microbiome
+lesson</a>. Not every learner has taken that lesson, so do not refer to
+its examples or dataset; the recap callout in episode 1 lists what is
+assumed.</li>
+<li>Episode 1 has no code. Use it to introduce multi-omics, why the
+microbiome is studied with other data types, and the three groups of
+methods (exploratory, unsupervised, supervised), which structure the
+rest of the lesson. The section on how the data is generated is
+background: spend about 10 minutes on it, and stress the three
+take-homes: one transformation per data type, matched samples, and
+batches mixed up with the groups.</li>
+<li>Episode 2 introduces the study (HintikkaXO) and the
+<code>MultiAssayExperiment</code>. <code>primary</code> and
+<code>colname</code> of the <code>sampleMap()</code> are identical in
+HintikkaXO, so use the rat C1 example to show the concept.</li>
+<li>The summary page (episode 6) wraps up the whole lesson and how to
+choose a method. Leave about 10 minutes for it.</li>
+<li>The episodes build on each other through the <code>mae</code> object
+prepared in episode 2 and kept in the R session; nothing is saved to
+disk. If a learner restarts R or falls behind, they can catch up by
+running the code of episode 2 again (a few seconds).</li>
+<li>The setup page installs the packages with explicit commands instead
+of a script, so that learners see where each package comes from
+(Bioconductor, CRAN or GitHub). Go through it briefly at the start if
+needed.</li>
+<li>The lesson uses <code>plotJointRPCA()</code> from miaViz, which is
+in the Bioconductor release from 3.24 on. Learners need the current
+release.</li>
+<li>Live-code every chunk. The chunks are kept short on purpose, and the
+lesson uses only package functions, no custom helper functions.</li>
+</ul></section><section><h2 class="section-heading" id="before-the-workshop">Before the workshop<a class="anchor" aria-label="anchor" href="#before-the-workshop"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>
+<strong>MOFA2 needs Python.</strong> The first
+<code>run_mofa()</code> installs a Python environment through basilisk,
+which can take 10 minutes or more. The setup page asks learners to train
+a test model before the workshop. Check this at the start of the
+workshop, at the latest before episode 4.</li>
+<li>multiomics and IntegratedLearner are installed from GitHub; check
+that they installed.</li>
+</ul></section><section><h2 class="section-heading" id="the-story-of-the-lesson">The story of the lesson<a class="anchor" aria-label="anchor" href="#the-story-of-the-lesson"></a>
+</h2>
+<hr class="half-width">
+<p>All episodes use the HintikkaXO data: 40 rats on a high-fat or
+low-fat diet, with or without the prebiotic XOS, with microbiota,
+metabolites and host biomarkers. Two threads connect the episodes.</p>
+<p><strong>The fat thread</strong></p>
+<ul>
+<li>Episode 2 (challenge 2): fat has a large effect on the microbiota
+(PCA) and on butyrate, acetate and propionate.</li>
+<li>Episode 3: the Mantel test is significant over all rats but weaker
+within the high-fat rats. Use challenge 1 to discuss how a shared factor
+(the diet) creates associations between data types. The butyrate
+challenge makes the same point for a single pair of features.</li>
+<li>Episode 4: joint RPCA roughly separates the fat groups, and MOFA
+factor 1, shared by all three data types, separates them perfectly.</li>
+<li>Episode 5: every data type predicts fat with AUC near 1.</li>
+</ul>
+<p><strong>The XOS thread</strong></p>
+<ul>
+<li>XOS was the intervention of the study, but its effect is small. MOFA
+finds no XOS factor (episode 4, challenge 3), IntegratedLearner predicts
+it with cross-validated AUCs of only 0.5–0.6, and the DIABLO
+cross-validated error is about 50 % (episode 5). Use this to discuss
+that integration does not create a signal, and that cross-validation is
+essential.</li>
+</ul>
+<p><strong>Consistent features</strong></p>
+<ul>
+<li>Glucose, butyrate and nicotinate come up in MiRKAT, MOFA factor 1
+and DIABLO. Episode 5, challenge 2, asks learners to notice this.</li>
+</ul>
+<p><strong>Episode-specific notes</strong></p>
+<ul>
+<li>Episode 3: within the diet groups, the butyrate association is very
+different (about 0 in the high-fat rats, about 0.4 in the low-fat rats).
+Use it to show that associations over all samples can hide or create
+links.</li>
+<li>Episode 4: <code>run_mofa()</code> warns that factor 3 follows the
+per-sample average of the metabolites; discuss it as a possible
+technical factor. The left/right direction of the joint RPCA map is
+computed inline, because the sign of an ordination axis is
+arbitrary.</li>
+<li>Episode 5: IntegratedLearner’s <code>seed</code> argument only fixes
+the folds; <code>set.seed()</code> is needed for reproducible random
+forests. When every data type predicts the fat perfectly, the stacking
+weights change strongly with the seed. In challenge 3, the first DIABLO
+component of the XOS model separates the fat groups.</li>
+</ul></section><section><h2 class="section-heading" id="notes-on-the-data">Notes on the data<a class="anchor" aria-label="anchor" href="#notes-on-the-data"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>The data comes with mia (<code>data("HintikkaXOData")</code>), so
+nothing is downloaded.</li>
+<li>The taxonomy has SILVA prefixes (<code>D_5__</code> for genus). The
+lesson keeps them to avoid custom code; mention that they do not change
+the analysis.</li>
+<li>Many genera are <code>uncultured</code>; mia makes their names
+unique with a number (<code>D_5__uncultured_2</code>).</li>
+<li>The metabolites have 27 missing values (below the detection limit),
+which episode 2 replaces with 0. The biomarkers have 95 missing values,
+which are kept: MOFA handles them, and IntegratedLearner drops those
+biomarkers (<code>na.rm = TRUE</code>).</li>
+<li>Joint RPCA and MOFA use rclr values with
+<code>impute = FALSE</code>, so that the methods fill in the zeros
+themselves. The default rclr of mia (and vegan) returns a low-rank
+reconstruction, which would make the microbiota look perfectly explained
+in MOFA.</li>
+</ul></section><section><h2 class="section-heading" id="common-problems">Common problems<a class="anchor" aria-label="anchor" href="#common-problems"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>
+<strong>Harmless warnings.</strong>
+<ul>
+<li>Many multiomics functions and <code>getWithColData()</code> warn
+<code>'experiments' dropped</code> and print
+<code>harmonizing input</code>.</li>
+<li>
+<code>upsetSamples()</code> prints deprecation warnings from
+UpSetR.</li>
+<li>
+<code>correlate_factors_with_covariates()</code> warns that it
+converts the covariates to numbers.</li>
+<li>MOFA warns about correlated factors; with 40 samples this is
+common.</li>
+<li>
+<code>block.splsda()</code> prints that the design matrix has
+changed.</li>
+</ul>
+</li>
+<li>
+<strong>IntegratedLearner cannot find the outcome.</strong> It reads
+the outcome and the sample IDs from the <code>colData</code> of each
+experiment. Run the three <code>getWithColData()</code> lines of episode
+5 first.</li>
+<li>
+<strong>Known package issues.</strong>
+<code>getMantel(group.by = )</code> fails on a
+<code>MultiAssayExperiment</code> (multiomics), so the lesson subsets
+the samples instead. The IntegratedLearner ROC plot leaves an empty
+lower half when there is no validation set.</li>
+<li>
+<strong>DIABLO <code>perf()</code> and the seed.</strong> Use the
+<code>seed</code> argument of <code>perf()</code>, not
+<code>set.seed()</code>: with some versions of mixOmics and
+BiocParallel, a second <code>perf()</code> call after
+<code>set.seed()</code> fails with
+<code>invalid value of 'seed'</code>.</li>
+<li>
+<strong>IntegratedLearner prints “training data”.</strong> The AUCs
+in its summary are cross-validated, despite the label.</li>
+</ul>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-
-
-      <section id="aggregate-instructor-notes"></section>
+ --></section><section id="aggregate-instructor-notes"></section>
 </div>
     </main>
 </div>
@@ -347,14 +565,14 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/microbiome/multiomics-lesson/edit/main/README.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/carpentries/workbench-template-md/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/carpentries/workbench-template-md/" class="external-link">Source</a></p>
+        | <a href="https://github.com/microbiome/multiomics-lesson/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/microbiome/multiomics-lesson/" class="external-link">Source</a></p>
         <p>
         <a href="citation.html">Cite</a>
-        | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:tvborm@utu.fi">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -374,15 +592,15 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://carpentries.github.io/workbench-template-md/instructor-notes.html",
+  "@id": "https://microbiome.github.io/multiomics-lesson/instructor-notes.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "software, data, lesson, The Carpentries",
+  "keywords": "microbiome, multi-omics, data integration, Bioconductor, R, mia, MultiAssayExperiment, MOFA, DIABLO, IntegratedLearner",
   "name": "Instructor Notes",
   "creativeWorkStatus": "active",
-  "url": "https://carpentries.github.io/workbench-template-md/instructor-notes.html",
-  "identifier": "https://carpentries.github.io/workbench-template-md/instructor-notes.html",
+  "url": "https://microbiome.github.io/multiomics-lesson/instructor-notes.html",
+  "identifier": "https://microbiome.github.io/multiomics-lesson/instructor-notes.html",
   "dateCreated": "2026-10-13",
   "dateModified": "2026-10-13",
   "datePublished": "2026-10-13"

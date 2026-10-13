@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Lesson Title: Key Points</title>
+<title>Multi-omics microbiome data analysis with R/Bioconductor: Key Points</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="../assets/styles.css">
 <script src="../assets/scripts.js" type="text/javascript"></script><!-- mathjax --><!-- NOTE: https://docs.mathjax.org/en/latest/output/mathml.html#mathml-support --><!-- Changes from V2 to V4: https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html
@@ -41,7 +41,7 @@
     <div class="col-md-8">
       <div class="large-logo">
         <a href="index.html">
-        <img id="incubator-logo" alt="Carpentries Incubator" src="../assets/images/incubator-logo.svg"></a>
+        <img id="incubator-logo" alt="Multi-omics microbiome data analysis with R/Bioconductor" src="../assets/images/incubator-logo.svg"></a>
 
         <span class="badge text-bg-danger">
           <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
@@ -100,10 +100,10 @@
     </button>
     <div class="nav-logo">
       <a href="index.html">
-      <img class="small-logo" alt="Carpentries Incubator" src="../assets/images/incubator-logo-sm.svg"></a>
+      <img class="small-logo" alt="Multi-omics microbiome data analysis with R/Bioconductor" src="../assets/images/incubator-logo-sm.svg"></a>
     </div>
     <div class="lesson-title-md">
-      Lesson Title
+      Multi-omics microbiome data analysis with R/Bioconductor
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -114,7 +114,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Lesson Title
+            Multi-omics microbiome data analysis with R/Bioconductor
           </span>
         </li>
         <li class="nav-item">
@@ -245,7 +245,67 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-introduction.html">1. Introduction to multi-omics</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-multiassayexperiment.html">2. MultiAssayExperiment and the study data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-exploratory.html">3. Exploratory methods</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-unsupervised.html">4. Unsupervised methods</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-supervised.html">5. Supervised methods</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="06-summary.html">6. Summary</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -328,17 +388,121 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Key Points</h1>
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="01-introduction"><h2 class="section-heading"><a href="01-introduction.html">Introduction to multi-omics</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Multi-omics data contains several data types measured from the same
+samples. Each data type looks at the samples from a different
+angle.</li>
+<li>A table of taxa tells who is there, but not what the bacteria do or
+how the host responds. Multi-omics links the microbiome to its
+functions, its metabolites and the host, and points towards
+mechanisms.</li>
+<li>Each data type is generated with its own method, and needs its own
+preparation. Microbiome counts are compositional; metabolites and
+biomarkers are not.</li>
+<li>Tables computed from the same reads, such as taxa and pathways, are
+related by construction.</li>
+<li>Multi-omics studies need matched samples, groups mixed across
+batches, and enough samples with all data types.</li>
+<li>Exploratory methods test whether the data types are related,
+unsupervised methods find shared patterns, and supervised methods
+predict an outcome from all data types.</li>
+</ul></section><section id="02-multiassayexperiment"><h2 class="section-heading"><a href="02-multiassayexperiment.html">MultiAssayExperiment and the study data</a></h2>
+<hr class="half-width">
+<ul>
+<li>The HintikkaXO data has three data types from 40 rats: microbiota,
+metabolites and host biomarkers. The rats were fed a high-fat or a
+low-fat diet, with or without the prebiotic XOS.</li>
+<li>A <code>MultiAssayExperiment</code> holds several experiments (here
+three TreeSEs), one shared table of sample information
+(<code>colData()</code>) and a <code>sampleMap()</code> that links
+them.</li>
+<li>
+<code>[[</code> picks one experiment, and <code>$</code> accesses
+the sample information. <code>getWithColData()</code> returns an
+experiment together with the sample information.</li>
+<li>
+<code>upsetSamples()</code> shows which samples have which data
+types, and <code>intersectColumns()</code> keeps the samples that have
+all of them.</li>
+<li>Subsetting by samples keeps all experiments in sync.
+<code>subsetByRow()</code> subsets the features of each experiment.</li>
+<li>
+<code>sampleMap()</code> links each column (<code>colname</code>) of
+each experiment to a subject (<code>primary</code>) in
+<code>colData()</code>.</li>
+<li>Each data type needs its own preparation: we agglomerate, filter and
+rclr-transform the compositional microbiota, replace values below the
+detection limit and log-transform the metabolites, and keep the
+biomarkers as they are.</li>
+</ul></section><section id="03-exploratory"><h2 class="section-heading"><a href="03-exploratory.html">Exploratory methods</a></h2>
+<hr class="half-width">
+<ul>
+<li>Exploratory integration goes from the big picture to the details:
+global association, feature vs data type, and feature vs feature.</li>
+<li>
+<code>getMantel()</code> tests whether two data types are related
+overall; <code>getMiRKAT()</code> finds the features of one data type
+that relate to the other as a whole.</li>
+<li>
+<code>getPairwiseAssociation()</code> calculates the association of
+every pair of features; <code>subsetByRow()</code> keeps the result
+small enough to plot.</li>
+<li>The Mantel test and MiRKAT are permutation or kernel tests: they
+compare similarities between samples instead of single features.</li>
+<li>A shared factor, such as the diet, creates associations between data
+types. Check associations within each group (<code>group.by</code>).
+Associations are hypotheses, not proof that a bacterium produces a
+metabolite.</li>
+</ul></section><section id="04-unsupervised"><h2 class="section-heading"><a href="04-unsupervised.html">Unsupervised methods</a></h2>
+<hr class="half-width">
+<ul>
+<li>Unsupervised integration methods find the main patterns that several
+data types share, without knowing the study groups.</li>
+<li>Use rclr with <code>impute = FALSE</code>, so that the integration
+methods handle the zeros themselves.</li>
+<li>Joint RPCA (<code>addJointRPCA()</code>) draws one map of the
+samples from two or more data types; <code>plotJointRPCA()</code> shows
+the samples and the features that drive the map.</li>
+<li>MOFA is a factor model: a few hidden factors, shared by all data
+types or specific to one, explain the data. Standardize the features,
+and ask for few factors when there are few samples.</li>
+<li>
+<code>plot_variance_explained()</code> shows how much of each data
+type each factor explains, and <code>plot_top_weights()</code> the
+features that drive it.</li>
+<li>Joint RPCA and MOFA show the shared patterns in different ways; in
+our data they agree.</li>
+<li>In our study, the main shared pattern is the fat in the diet.
+Smaller effects, such as XOS, can be hidden by larger ones.</li>
+</ul></section><section id="05-supervised"><h2 class="section-heading"><a href="05-supervised.html">Supervised methods</a></h2>
+<hr class="half-width">
+<ul>
+<li>Supervised integration predicts an outcome from several data types.
+Early fusion joins the tables, late fusion combines the predictions of
+separate models, and intermediate fusion combines what separate models
+learned.</li>
+<li>
+<code>IntegratedLearner()</code> trains models on a
+<code>MultiAssayExperiment</code> and reports cross-validated AUCs for
+each data type and for early and late fusion, plus the weight of each
+data type.</li>
+<li>DIABLO (<code>block.splsda()</code>) selects a few features from
+each data type that together tell the groups apart and are correlated
+with each other.</li>
+<li>Always evaluate a supervised model with cross-validation. Combining
+data types does not create a signal that is not in the data.</li>
+</ul></section><section id="06-summary"><h2 class="section-heading"><a href="06-summary.html">Summary</a></h2>
+<hr class="half-width">
+<ul>
+<li>Exploratory methods test whether data types are related,
+unsupervised methods find shared patterns, and supervised methods
+predict an outcome.</li>
+<li>Choose the group of methods by the research question, and look for
+results that are consistent across methods.</li>
+<li>Integrating data types does not create a signal that is not in the
+data.</li>
 </ul></section>
 </div>
     </main>
@@ -352,14 +516,14 @@ locally</li>
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/microbiome/multiomics-lesson/edit/main/README.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/carpentries/workbench-template-md/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/carpentries/workbench-template-md/" class="external-link">Source</a></p>
+        | <a href="https://github.com/microbiome/multiomics-lesson/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/microbiome/multiomics-lesson/" class="external-link">Source</a></p>
         <p>
         <a href="../citation.html">Cite</a>
-        | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:tvborm@utu.fi">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -379,15 +543,15 @@ locally</li>
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://carpentries.github.io/workbench-template-md/instructor/key-points.html",
+  "@id": "https://microbiome.github.io/multiomics-lesson/instructor/key-points.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "software, data, lesson, The Carpentries",
+  "keywords": "microbiome, multi-omics, data integration, Bioconductor, R, mia, MultiAssayExperiment, MOFA, DIABLO, IntegratedLearner",
   "name": "Key Points",
   "creativeWorkStatus": "active",
-  "url": "https://carpentries.github.io/workbench-template-md/instructor/key-points.html",
-  "identifier": "https://carpentries.github.io/workbench-template-md/instructor/key-points.html",
+  "url": "https://microbiome.github.io/multiomics-lesson/instructor/key-points.html",
+  "identifier": "https://microbiome.github.io/multiomics-lesson/instructor/key-points.html",
   "dateCreated": "2026-10-13",
   "dateModified": "2026-10-13",
   "datePublished": "2026-10-13"
