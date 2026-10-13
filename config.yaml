@@ -15,33 +15,33 @@ carpentry: 'incubator'
 
 # Custom carpentry description
 # This will be used as the alt text for the logo
-# carpentry_description: "Custom Carpentry"
+carpentry_description: 'Multi-omics microbiome data analysis with R/Bioconductor'
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Multi-omics microbiome data analysis with R/Bioconductor'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: 2026-10-13
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries' # FIXME
+keywords: 'microbiome, multi-omics, data integration, Bioconductor, R, mia, MultiAssayExperiment, MOFA, DIABLO, IntegratedLearner'
 
 # Life cycle stage of the lesson
 # refer to <https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html> for details
 # possible values: pre-alpha, alpha, beta, stable, retired
-life_cycle: 'pre-alpha' # FIXME
+life_cycle: 'pre-alpha'
 
 # License of the lesson
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/microbiome/multiomics-lesson'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'tvborm@utu.fi'
 
 # Navigation ------------------------------------------------
 #
@@ -66,17 +66,26 @@ contact: 'team@carpentries.org' # FIXME
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- introduction.md
+episodes:
+- 01-introduction.Rmd
+- 02-multiassayexperiment.Rmd
+- 03-exploratory.Rmd
+- 04-unsupervised.Rmd
+- 05-supervised.Rmd
+- 06-summary.md
 
 # Information for Learners
-learners: 
+learners:
+- setup.md
+- reference.md
 
 # Information for Instructors
-instructors: 
+instructors:
+- instructor-notes.md
 
 # Learner Profiles
-profiles: 
+profiles:
+- learner-profiles.md
 
 # Customisation ---------------------------------------------
 #

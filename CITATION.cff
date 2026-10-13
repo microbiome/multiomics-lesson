@@ -1,11 +1,11 @@
-# This template CITATION.cff file was generated with cffinit.
+# This CITATION.cff file was generated with cffinit.
 # Visit https://bit.ly/cffinit to replace its contents
 # with information about your lesson.
-# Remember to update this file periodically, 
+# Remember to update this file periodically,
 # ensuring that the author list and other fields remain accurate.
 
 cff-version: 1.2.0
-title: FIXME
+title: Multi-omics microbiome data analysis with R/Bioconductor
 message: >-
   Please cite this lesson using the information in this file
   when you refer to it in publications, and/or if you
@@ -13,10 +13,30 @@ message: >-
   training material.
 type: dataset
 authors:
-  - given-names: FIXME
-    family-names: FIXME
+  - given-names: Tuomas
+    family-names: Borman
+    affiliation: University of Turku
+  - given-names: Leo
+    family-names: Lahti
+    affiliation: University of Turku
+  - given-names: Himel
+    family-names: Mallick
+    affiliation: Cornell University
+repository-code: 'https://github.com/microbiome/multiomics-lesson'
+url: 'https://microbiome.github.io/multiomics-lesson/'
 abstract: >-
-  FIXME Replace this with a short abstract describing the
-  lesson, e.g. its target audience and main intended
-  learning objectives.
+  A Carpentries-style lesson on integrating microbiome data with other
+  data types, such as metabolites and host biomarkers, measured from the
+  same samples, for learners who can already analyse a single microbiome
+  table. Learners store several
+  data types in a MultiAssayExperiment and apply exploratory (Mantel test,
+  MiRKAT, pairwise association), unsupervised (joint RPCA, MOFA) and
+  supervised (IntegratedLearner, DIABLO) integration methods with
+  R/Bioconductor.
+keywords:
+  - microbiome
+  - multi-omics
+  - data integration
+  - Bioconductor
+  - R
 license: CC-BY-4.0
