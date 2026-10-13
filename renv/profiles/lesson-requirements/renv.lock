@@ -831,6 +831,21 @@
       "Maintainer": "Achim Zeileis <Achim.Zeileis@R-project.org>",
       "Repository": "CRAN"
     },
+    "GPArotation": {
+      "Package": "GPArotation",
+      "Version": "2026.8-2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Depends": [
+        "R (>= 3.5.0)"
+      ],
+      "Imports": [
+        "stats",
+        "grDevices",
+        "graphics",
+        "utils"
+      ]
+    },
     "GUniFrac": {
       "Package": "GUniFrac",
       "Version": "1.9",
@@ -8076,6 +8091,15 @@
       "Maintainer": "Derek Young <derek.young@uky.edu>",
       "Repository": "CRAN"
     },
+    "mnormt": {
+      "Package": "mnormt",
+      "Version": "2.1.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Depends": [
+        "R (>= 3.0.0)"
+      ]
+    },
     "modeest": {
       "Package": "modeest",
       "Version": "2.5.0",
@@ -9249,6 +9273,23 @@
       "Author": "David Meyer [aut, cre] (ORCID: <https://orcid.org/0000-0002-5196-3048>), Christian Buchta [aut]",
       "Maintainer": "David Meyer <David.Meyer@R-project.org>",
       "Repository": "CRAN"
+    },
+    "psych": {
+      "Package": "psych",
+      "Version": "2.6.9",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Imports": [
+        "mnormt",
+        "parallel",
+        "stats",
+        "graphics",
+        "grDevices",
+        "methods",
+        "lattice",
+        "nlme",
+        "GPArotation"
+      ]
     },
     "purrr": {
       "Package": "purrr",

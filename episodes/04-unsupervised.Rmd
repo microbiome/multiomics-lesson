@@ -26,6 +26,9 @@ exercises: 35
 
 ```{r setup, include=FALSE}
 source("prepare_data.R")
+# MOFA2 suggests psych, which correlate_factors_with_covariates() needs.
+# Listing it here makes renv record it in the lockfile.
+requireNamespace("psych", quietly = TRUE)
 ```
 
 ## Where are we?
