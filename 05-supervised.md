@@ -144,7 +144,7 @@ fit <- IntegratedLearner(
 ```
 
 ``` output
-Time for model fit : 0.027 minutes 
+Time for model fit : 0.052 minutes 
 ========================================
 Model fit for individual layers: SL.randomForest 
 Model fit for stacked layer: sl_nnls_auc 
@@ -263,7 +263,7 @@ fit_xos <- IntegratedLearner(
 ```
 
 ``` output
-Time for model fit : 0.023 minutes 
+Time for model fit : 0.029 minutes 
 ========================================
 Model fit for individual layers: SL.randomForest 
 Model fit for stacked layer: sl_nnls_auc 
